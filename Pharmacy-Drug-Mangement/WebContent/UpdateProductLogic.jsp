@@ -49,7 +49,7 @@
                 String query3 = "update product set pid='" + request.getParameter("prid") + "' ,pname='" + request.getParameter("prname") + "',manufacturer='" + request.getParameter("mfname") + "',mfg='" + request.getParameter("mdate") + "',exp='" + request.getParameter("edate") + "',price='" + request.getParameter("price") + "' WHERE pid = '" + request.getParameter("prid") + "';";
                 String query4 = "SET foreign_key_checks = 1;";
 
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/drugdatabase", "root", "");
+                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/drugdatabase?useSSL=false&allowPublicKeyRetrieval=true", "root", "kashyap");
                 s1 = conn.createStatement();
 
                 s1.addBatch(query1);

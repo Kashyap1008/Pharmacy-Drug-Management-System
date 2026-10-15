@@ -52,7 +52,7 @@
 
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/drugdatabase", "root", "");
+                conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/drugdatabase?useSSL=false&allowPublicKeyRetrieval=true", "root", "kashyap");
                 ps1 = conn.prepareStatement(query2);
                 ps1.setString(1, pid_option);
                 rs = ps1.executeQuery();

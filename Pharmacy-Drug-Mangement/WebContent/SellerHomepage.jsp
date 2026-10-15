@@ -45,7 +45,7 @@
 	String query="select sname,sid,address,phno from seller where sid=?";
 	try{
 		Class.forName("com.mysql.jdbc.Driver");
-		conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/drugdatabase","root","");
+		conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/drugdatabase?useSSL=false&allowPublicKeyRetrieval=true", "root", "kashyap");
 		ps=conn.prepareStatement(query);
 		ps.setString(1,guid);
 		rs=ps.executeQuery();

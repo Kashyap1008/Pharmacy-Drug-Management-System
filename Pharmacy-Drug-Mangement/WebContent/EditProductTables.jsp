@@ -22,7 +22,7 @@
     
     try{
         Class.forName("com.mysql.jdbc.Driver");
-        conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/drugdatabase","root","");
+        conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/drugdatabase?useSSL=false&allowPublicKeyRetrieval=true", "root", "kashyap");
         
     }
     catch(Exception ex){

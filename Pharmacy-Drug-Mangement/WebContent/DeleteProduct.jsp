@@ -58,7 +58,7 @@
         String query2 = "Delete from inventory where pid = ?";
         String pid = request.getParameter("pid");
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/drugdatabase", "root", "");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/drugdatabase?useSSL=false&allowPublicKeyRetrieval=true", "root", "kashyap");
             ps1 = conn.prepareStatement(query1);
             ps1.setString(1, pid);
             int r1 = ps1.executeUpdate();

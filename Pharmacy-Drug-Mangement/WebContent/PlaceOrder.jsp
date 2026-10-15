@@ -24,7 +24,7 @@ String query1="select P.pid,O.sid,P.price from inventory o,product p where p.pid
 String query2="insert into orders(pid,sid,uid,quantity,price) values(?,?,?,?,?)";
 try{
 	Class.forName("com.mysql.jdbc.Driver");
-	conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/drugdatabase","root","");
+	conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/drugdatabase?useSSL=false&allowPublicKeyRetrieval=true", "root", "kashyap");
 	ps=conn.prepareStatement(query1);
 	ps.setString(1,pid);
 	rs=ps.executeQuery();
